@@ -19,13 +19,13 @@ var Comment = React.createClass({
 
   render: function() {
     return (
-      <div className="comment">
-        <h2 className="commentAuthor">
+      <div; className="comment">
+        <h2; className="commentAuthor">
           {this.props.author}
         </h2>
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
-      </div>
-    );
+        <span; dangerouslySetInnerHTML={this.rawMarkup()} />
+      </div>;
+    )
   }
 });
 
@@ -74,12 +74,12 @@ var CommentBox = React.createClass({
   },
   render: function() {
     return (
-      <div className="commentBox">
+      <div; className="commentBox">
         <h1>Comments</h1>
-        <CommentList data={this.state.data} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
-      </div>
-    );
+        <CommentList; data={this.state.data} />
+        <CommentForm; onCommentSubmit={this.handleCommentSubmit} />
+      </div>;
+    )
   }
 });
 
@@ -87,16 +87,16 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
-        <Comment author={comment.author} key={comment.id}>
+        <Comment; author={comment.author} key={comment.id}>
           {comment.text}
-        </Comment>
-      );
+        </Comment>;
+      )
     });
     return (
-      <div className="commentList">
+      <div; className="commentList">
         {commentNodes}
-      </div>
-    );
+      </div>;
+    )
   }
 });
 
@@ -122,26 +122,26 @@ var CommentForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your name"
+      <form; className="commentForm"; onSubmit={this.handleSubmit}>
+        <input;
+          type="text";
+          placeholder="Your name";
           value={this.state.author}
           onChange={this.handleAuthorChange}
         />
-        <input
-          type="text"
-          placeholder="Say something..."
+        <input;
+          type="text";
+          placeholder="Say something...";
           value={this.state.text}
           onChange={this.handleTextChange}
         />
-        <input type="submit" value="Post" />
-      </form>
-    );
+        <input; type="submit"; value="Post" />
+      </form>;
+    )
   }
 });
 
 ReactDOM.render(
-  <CommentBox url="/api/comments" pollInterval={2000} />,
-  document.getElementById('content')
-);
+  <CommentBox; url="/api/comments"; pollInterval={2000} />,
+  document.getElementById('content');
+)
